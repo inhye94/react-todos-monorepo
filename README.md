@@ -2,6 +2,14 @@
 
 이 프로젝트는 프론트엔드와 백엔드 서비스를 포함한 모노레포 구조로 구성되어 있습니다. 원티드 2024년 11월 프리온보딩 사전과제 진행를 위해 제작되었습니다.
 
+### 로그인 화면
+
+<img width="1080" alt="스크린샷 2024-12-22 오후 5 50 00" src="https://github.com/user-attachments/assets/83b19d32-2477-4bb9-adbd-1bc4d16facbe" />
+
+### 투두 리스트 화면
+
+<img width="1080" alt="스크린샷 2024-12-22 오후 5 03 28" src="https://github.com/user-attachments/assets/95fc1633-f71a-4a20-9454-a2bb24609a6a" />
+
 ## Backend 서비스
 
 이 프로젝트의 백엔드 코드는 [wanted-pre-onboarding-challenge-api](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)에서 가져온 것으로, 원 저작자의 라이선스를 준수하며 사용하고 있습니다. 해당 코드는 독립적으로 관리되며, 원본 코드와 동기화 여부는 보장되지 않습니다.
