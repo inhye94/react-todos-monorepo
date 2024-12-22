@@ -33,7 +33,7 @@ const JoinPage = () => {
 
   return (
     <section>
-      <h1>Join</h1>
+      <h1>회원가입</h1>
 
       <AuthForm
         submitText="회원가입"

@@ -3,6 +3,10 @@ import { AuthPayloadType } from "../types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authSchema } from "../schema/auth";
 import { useCallback } from "react";
+import TextInputField from "../../../components/ui/form/TextInputField";
+import Button from "../../../components/ui/button/BaseButton";
+import { css } from "@emotion/react";
+import ValidateMessage from "../../../components/ui/form/ValidateMessage";
 
 interface IAuthFormProps {
   submitText: string;
@@ -27,38 +31,58 @@ const AuthForm = ({ submitText, errorMessage, onPermit }: IAuthFormProps) => {
   );
 
   return (
-    <form onSubmit={handleSubmit((formData) => onSubmit(formData))}>
+    <form
+      onSubmit={handleSubmit((formData) => onSubmit(formData))}
+      css={formStyle}
+    >
       <div>
-        <label htmlFor="email">아이디</label>
-        <input
-          type="text"
-          id="email"
-          placeholder="아이디"
+        <TextInputField
+          label="아이디"
+          placeholder="아이디를 입력해주세요"
           {...register("email")}
         />
-        {errors.email?.message && <p>{errors.email?.message}</p>}
+        <ValidateMessage type="error">{errors.email?.message}</ValidateMessage>
       </div>
 
       <div>
-        <label htmlFor="password">비밀번호</label>
-        <input
+        <TextInputField
+          label="비밀번호"
           type="password"
-          id="password"
-          placeholder="비밀번호"
+          placeholder="비밀번호를 입력해주세요"
           {...register("password")}
         />
-        {errors.password?.message && <p>{errors.password?.message}</p>}
+        <ValidateMessage type="error">
+          {errors.password?.message}
+        </ValidateMessage>
       </div>
 
-      {errorMessage && <p>{errorMessage}</p>}
-
-      <div>
-        <button type="submit" disabled={!isValid || isSubmitting}>
+      <div css={buttonWrapperStyle}>
+        <Button
+          type="submit"
+          css={buttonStyle}
+          disabled={!isValid || isSubmitting}
+        >
           {submitText}
-        </button>
+        </Button>
+
+        <ValidateMessage type="error">{errorMessage}</ValidateMessage>
       </div>
     </form>
   );
 };
 
 export default AuthForm;
+
+// styles
+const formStyle = css`
+  display: flex;
+  flex-direction: column;
+`;
+
+const buttonWrapperStyle = css`
+  margin-top: 12px;
+`;
+
+const buttonStyle = css`
+  width: 100%;
+`;

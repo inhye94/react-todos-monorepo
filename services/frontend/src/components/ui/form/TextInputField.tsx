@@ -35,25 +35,3 @@ const labelStyle = css`
   font-weight: 700;
   text-transform: uppercase;
 `;
-
-const inputStyle = css`
-  width: 100%;
-  height: 40px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: border-color 150ms ease-in-out;
-
-  &::placeholder {
-    color: #aaa;
-  }
-
-  &:hover {
-    border-color: #bbb;
-  }
-
-  &:focus {
-    border-color: #646cff;
-  }
-`;

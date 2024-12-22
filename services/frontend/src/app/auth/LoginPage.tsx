@@ -39,7 +39,7 @@ const LoginPage = () => {
 
   return (
     <section>
-      <h1>login</h1>
+      <h1>로그인</h1>
 
       <AuthForm
         submitText="로그인"
