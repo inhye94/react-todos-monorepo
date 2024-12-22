@@ -1,0 +1,15 @@
+{
+  "name": "react-todos-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --filter @todos/backend start & pnpm --filter @todos/frontend dev",
+    "build": "pnpm --filter @todos/backend build & pnpm --filter @todos/frontend build",
+    "lint": "pnpm -r lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.15.1"
+}
