@@ -1,102 +1,107 @@
-# 모노레포 프로젝트
+# 원티드 사전과제 - To Do List
 
-이 프로젝트는 프론트엔드와 백엔드 서비스를 포함한 모노레포 구조로 구성되어 있습니다. 원티드 2024년 11월 프리온보딩 사전과제 진행를 위해 제작되었습니다.
+<img width="1680" alt="스크린샷 2025-01-08 오후 2 58 23" src="https://github.com/user-attachments/assets/8b15dc7c-f349-4b4e-a5c5-2668b708b04f" />
 
-### 로그인 화면
+**이 프로젝트는 프론트엔드와 백엔드 서비스를 포함한 모노레포 구조로 구성되어 있습니다.  
+원티드 2024년 11월 프리온보딩 사전과제 진행를 위해 제작되었습니다.**
 
-<img width="1080" alt="스크린샷 2024-12-22 오후 5 50 00" src="https://github.com/user-attachments/assets/83b19d32-2477-4bb9-adbd-1bc4d16facbe" />
+- **`작업기간`**: 2024.11.14 ~ 2024.12.21
+- **`stack`**: Vite, React, Typescript, React-Query, Zustand, Emotion
 
-### 투두 리스트 화면
-
-<img width="1080" alt="스크린샷 2024-12-22 오후 5 03 28" src="https://github.com/user-attachments/assets/95fc1633-f71a-4a20-9454-a2bb24609a6a" />
-
-## Backend 서비스
+### Backend 서비스
 
 이 프로젝트의 백엔드 코드는 [wanted-pre-onboarding-challenge-api](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)에서 가져온 것으로, 원 저작자의 라이선스를 준수하며 사용하고 있습니다. 해당 코드는 독립적으로 관리되며, 원본 코드와 동기화 여부는 보장되지 않습니다.
 
 - **출처**: [wanted-pre-onboarding-challenge-api](https://github.com/starkoora/wanted-pre-onboarding-challenge-fe-1-api)
 - **라이선스**: ISC
 
-### 관리 방식
+#### 관리 방식
 
 백엔드 코드는 모노레포 내의 `/services/backend` 디렉터리에 위치하지만, 외부 출처와는 별도로 독립적으로 관리됩니다.  
 따라서 이 코드는 원본 프로젝트의 최신 버전과 동기화되지 않을 수 있습니다.
 
-## Frontend 서비스
-
-### 개요
-
-- 규모: 개인 프로젝트 (2024.11.14 ~ 2024.12.21)
-- **데이터 페칭 최적화**를 위해 Loader에 queryClient를 주입하여 캐싱 효율을 극대화
-- Provider 패턴, 단일 책임 원리, CCP 패턴 등을 적용해 **코드의 모듈성과 유지보수성**을 개선
-- **코드의 안정성**을 위해 TypeScript와 Linter를 적용
-- **React Portal**을 이용한 모달 구현
-- **Context**를 이용한 토스트 구현
-
-### 기능
-
-- 할 일 등록/수정/삭제
-- 할 일 필터/정렬/검색
-- 로그인/로그아웃, 회원가입
-- 로그인 여부에 따른 redirect
-
-### 개발 배경
+## 개발 배경
 
 원티드 2024년 11월 프리온보딩 과정에서 멘토님의 라이브 코드 리뷰를 통해 사전 과제로 제출된 코드에 대한 심도 깊은 피드백을 받을 수 있었습니다. 다른 참가자분들의 다양한 구현 방식을 관찰하며 기존의 접근 방식을 넘어 **새로운 방법으로 코드를 작성해보고자 하는 도전 의식**이 생겼습니다.
 
 이에 따라 폴리 레포를 모노 레포로 전환하거나, 패키지 매니저를 변경해보는 시도는 물론, 스타일링을 기존의 module CSS에서 CSS-in-JS로 전환하는 등의 다양한 실험을 통해 기술적 역량과 시야를 넓히는 데 주력했습니다.
 
-### 기술 스택
+## 작업 사항
 
-```json
-{
-  "라이브러리": "React",
-  "빌드": "Vite",
-  "트랜스파일 언어": "TypeScript",
-  "상태관리": ["TanStack Query", "Zustand"],
-  "스타일링": "Emotion",
-  "HTTP 클라이언트": "Axios",
-  "코드 품질 관리": ["ESLint", "TypeScript ESLint"],
-  "패키지 매니저": "pnpm"
-}
-```
+- **데이터 페칭 최적화**를 위해 Loader에 queryClient를 주입하여 캐싱 효율을 극대화
+- Provider 패턴, 단일 책임 원리, CCP 패턴 등을 적용해 **코드의 모듈성과 유지보수성**을 개선
+- **코드의 안정성**을 위해 TypeScript와 esLint 적용
+- **React Portal**을 이용한 모달 구현
+- **Context**를 이용한 토스트 구현
 
-### 트러블 슈팅
+## 작업 화면
 
-#### react-router loader와 tanstackQuery 캐싱
+| 홈                                                                                     |
+| -------------------------------------------------------------------------------------- |
+| ![홈](https://github.com/user-attachments/assets/0c8d3ee7-3bec-4331-ad2c-dbb5a458f732) |
+| - 환영 문구<br/> - GNB 메뉴 (홈, 투두리스트)<br/> - Auth 버튼 (로그인/로그아웃)        |
+
+| 로그인 화면                                                                                       |
+| ------------------------------------------------------------------------------------------------- |
+| ![로그인 페이지](https://github.com/user-attachments/assets/83b19d32-2477-4bb9-adbd-1bc4d16facbe) |
+| - 로그인 > 홈으로 이동<br/> - 로그인에 실패하면 에러 메세지 표시<br/> - 회원가입 유도 링크 포함   |
+
+| 회원가입 페이지                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ![회원가입 페이지](https://github.com/user-attachments/assets/4aec168c-fa4e-4a5e-a5d1-e1de664d155a)                                                    |
+| - 유효성 검사에 실패하면 Input 아래에 에러 메세지 표시<br/> - 회원가입 완료 > 로그인 페이지로 이동<br/> - 로그인을 원하는 유저를 위한 로그인 링크 출력 |
+
+| 목록 페이지                                                                                     |
+| ----------------------------------------------------------------------------------------------- |
+| ![목록 페이지](https://github.com/user-attachments/assets/6fd320a8-ba05-4c77-81a1-321cac71cf3c) |
+| - 전체 리스트 출력<br/> - 검색, 필터와 정렬<br/> - 비로그인이면 홈으로 Redirect                 |
+
+| 등록/수정 페이지                                                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![등록 페이지](https://github.com/user-attachments/assets/95fc1633-f71a-4a20-9454-a2bb24609a6a)                                                      |
+| - 제목, 내용, 긴급도 설정<br/> - 유저와 상호작용하는 Input과 Checkbox<br/> - 할 일 등록하면 안내 Toast 등장<br/> - 페이지에 따라 등록/수정 버튼 전환 |
+
+| 상세 페이지                                                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- |
+| ![상세 페이지](https://github.com/user-attachments/assets/910ec475-cb97-4d20-a756-fc1cf1a31379)                               |
+| - 사이드 메뉴에서 선택한 할 일 강조<br/>- 제목, 내용, 긴급도 출력<br/> - 수정버튼 클릭 > 수정 페이지로 이동<br/> - 할 일 삭제 |
+
+## 트러블 슈팅
+
+### react-router loader와 tanstackQuery 캐싱
 
 - **[문제점]** `react-router`의 `loader`를 통해 데이터를 패칭할 수 있다는 점을 알게 되었으나, `loader`가 TS 파일에서 구현되다 보니 `useQueryClient` 훅 사용이 제한되는 문제가 있었습니다.
 - **[해결]** `loader`의 매개변수에 **client를 주입**하여 문제를 해결했습니다.
 - **[성과]** 최적화 방식의 다양성을 체감하며, loader와 query를 파일 단위로 분리하여 유지보수성을 크게 향상시켰습니다.
 
-#### emotion 스타일링과 타입 일관성 유지
+### emotion 스타일링과 타입 일관성 유지
 
 - **[문제점]** emotion을 사용하면서 스타일에 대한 props 값의 일관성을 유지하기 어려웠습니다.
 - **[해결]** 스타일 객체를 생성하고, `keyof`와 `typeof`를 적극 활용해 **타입이 자동으로 갱신**되도록 구현했습니다.
 - **[성과]** 코드의 안정성과 일관성을 높였으며, 스타일 관리 효율성을 크게 향상시켰습니다.
 
-#### 모노레포 환경에서 Ghost Dependency 문제
+### 모노레포 환경에서 Ghost Dependency 문제
 
 - **[문제점]** 모노레포 구현 중 workspace의 TypeScript 버전 호환성과 패키지 의존성 관리 문제가 발생했습니다. 이는 Yarn Berry의 호이스팅으로 인한 Ghost Dependency 때문이었습니다.
 - **[해결]** 패키지 매니저를 `pnpm`으로 변경하여 문제를 해결했습니다.
 - **[성과]** 의존성 관리가 안정적으로 이루어졌으며, 모노레포 환경의 개발 생산성을 개선할 수 있었습니다.
 
-### 배운 점
+## 배운 점
 
 기존에는 주로 UI 라이브러리를 활용해 toast와 모달을 구현했지만, 직접 구현하면서 간단한 **state 주입에는 context가 적합하다**는 점을 깨달았습니다. 특히 Radix UI의 Dialog 구현 코드를 분석하며 **CCP 패턴**을 발견하고, 이를 활용해 직접 모달을 구현하며 컴포넌트의 **부모나 조상에게 구조 결정을 위임**함으로써 내부 구조의 자율성을 높이고, 재사용성을 극대화할 수 있음을 알게 되었습니다. 또한, props를 기반으로 return 컴포넌트를 결정할 때 발생하던 중복 코드를 CCP 패턴으로 효과적으로 줄일 수 있었습니다.
 
 개발을 처음 시작했을 때 만들었던 프로젝트는 간단한 todos 앱이었습니다. 그때 늦은 밤까지 눈을 반짝이며 코드를 짜던 설렘을 다시금 느낄 수 있는 경험이었습니다. 새로운 시도(emotion, 모노레포, loader, vite, CCP 패턴, FSD 디렉토리 구조 등)를 하면서, 익숙하고 편안한 방식에 안주하지 않고 꾸준히 새로운 개념을 접하고 적용하는 것이 얼마나 중요한지 다시 한 번 깨달았습니다.
 
-### 실행방법
+## 실행방법
 
 ```bash
 > pnpm install
 > pnpm start
 ```
 
-### 맛보기 코드
+## 맛보기 코드
 
-#### Router
+### Router
 
 라우터 코드입니다.  
 errorElenet를 통해 에러 발생시, 에러 메세지를 화면에 표기합니다.
@@ -157,7 +162,7 @@ export const router = createBrowserRouter(
 );
 ```
 
-#### todosLoader
+### todosLoader
 
 react-router에 적용할 loader 코드 입니다. 파일을 따로 분리해서 관리합니다.  
 queryClient를 매개변수로 주입받아, fetching된 데이터를 키에 캐싱합니다.
@@ -174,7 +179,7 @@ export const todosLoader = async (queryClient: QueryClient) => {
 };
 ```
 
-#### todoQueries
+### todoQueries
 
 useQuery 또는 useMutation에서 사용할 queryOptions를 객체에 담아 관리합니다.  
 query key와 queryOptions를 선언합니다.
@@ -228,7 +233,7 @@ export const todoMutations = {
 };
 ```
 
-#### todo API
+### todo API
 
 HTTP 네트워킹을 하는 코드만 모아둔 파일입니다.  
 Response의 데이터형을 선언하고 데이터 전처리를 진행합니다.
@@ -281,7 +286,7 @@ export const deleteTodo = async (todoId: string) => {
 };
 ```
 
-#### Axios Request 메소드
+### Axios Request 메소드
 
 Axios Request 메소드를 객체로 모은 파일입니다.  
 각 메소드의 params와 return 데이터의 데이터형을 선언합니다.
@@ -304,7 +309,7 @@ export const axiosRequest: RequestMethdType = {
 };
 ```
 
-#### Axios Instance
+### Axios Instance
 
 Axios의 Instance와 Interceptor를 구현합니다.
 
